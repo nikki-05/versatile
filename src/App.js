@@ -1,9 +1,12 @@
+import Header from "./components/Header";
+import Main from "./components/Main";
+import TranslateComponent from "./components/Translate";
 
 function App() {
   return (
-    <div>
-      hello World
-    </div>
+    <>
+      <TranslateComponent />
+    </>
   );
 }
 
