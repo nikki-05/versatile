@@ -7,6 +7,7 @@
 .learn h1 {
   text-align: center;
   margin-bottom: 2rem;
+  color: #333; /* Improved color for better readability */
 }
 
 .lesson-grid {
@@ -20,11 +21,17 @@
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
+  transition: box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.lesson-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added hover effect */
 }
 
 .lesson-card h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #4a90e2; /* Changed color for headings */
 }
 
 .lesson-card p {
@@ -39,4 +46,9 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Added transition for button */
+}
+
+.lesson-card button:hover {
+  background-color: #3a7bc8; /* Darker shade on hover */
 }

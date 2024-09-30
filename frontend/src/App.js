@@ -6,6 +6,7 @@ import Learn from './component/Learn';
 import Translate from './component/Translate';
 import Footer from './component/Footer';
 import './App.css';
+import Board from './component/Board';
 
 function App() {
   return (
@@ -14,9 +15,12 @@ function App() {
         <Navbar />
         <div className="content-wrap">
           <Routes>
-            <Route path="/" element={<Translate />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/translate" element={<Translate />} />
             <Route path="/learn" element={<Learn />} />
+            <Route path="/board" element={<Board/>} />
+            
+
           </Routes>
         </div>
         <Footer />
