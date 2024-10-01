@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Learn.css';
 
 function Learn() {
@@ -7,14 +8,18 @@ function Learn() {
       <h1>Learn Sign Language</h1>
       <div className="lesson-grid">
         <div className="lesson-card">
-          <h2>Alphabet</h2>
-          <p>Learn the basics of finger spelling</p>
-          <button>Start Lesson</button>
+          <Link to="/alphabet" className="lesson-link"> {/* Add Link component */}
+            <h2>Alphabet</h2>
+            <p>Learn the basics of finger spelling</p>
+            <button>Start Lesson</button>
+          </Link>
         </div>
         <div className="lesson-card">
+        <Link to="/numbers" className="lesson-link">
           <h2>Numbers</h2>
           <p>Master signing numbers from 0 to 100</p>
           <button>Start Lesson</button>
+          </Link>
         </div>
         <div className="lesson-card">
           <h2>Common Phrases</h2>

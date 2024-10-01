@@ -4,10 +4,6 @@
   transition: background-color 0.3s; /* Smooth background transition */
 }
 
-.navbar:hover {
-  background-color: #1a252f; /* Darker shade on hover */
-}
-
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -18,15 +14,23 @@
 }
 
 .navbar-logo {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
   font-size: 1.8rem; /* Increased logo size */
   font-weight: bold; 
   color: #ecf0f1; /* Light color for contrast */
   text-decoration: none;
 }
 
+.navbar-logo img {
+  height: 80px; /* Adjusted height for better fit */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 1rem; /* Space between logo and text */
+}
+
 .navbar-menu {
   display: flex;
-  gap: 1.5rem; /* Increased spacing */
+  gap: 2rem; /* Increased spacing for better proportion */
 }
 
 .navbar-item {
@@ -39,7 +43,7 @@
 
 .navbar-item:hover {
   color: #ffffff; /* White text on hover */
-  background-color: #007bff; /* Bootstrap primary blue */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background effect on hover */
 }
 
 .navbar-button {

@@ -1,0 +1,38 @@
+.numbers-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .numbers-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 18px;
+  }
+  
+  .numbers-table th, .numbers-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .numbers-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .hand-sign {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .numbers-table td img {
+    display: block;
+    margin: 0 auto;
+  }
+  

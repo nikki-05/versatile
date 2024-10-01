@@ -7,6 +7,8 @@ import Translate from './component/Translate';
 import Footer from './component/Footer';
 import './App.css';
 import Board from './component/Board';
+import Alphabet from './component/Alphabet';
+import Numbers from './component/Numbers';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="/translate" element={<Translate />} />
             <Route path="/learn" element={<Learn />} />
             <Route path="/board" element={<Board/>} />
+            <Route path="/alphabet" element={<Alphabet/>} />
+            <Route path="/numbers" element={<Numbers/>} />
             
 
           </Routes>
