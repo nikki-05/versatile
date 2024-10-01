@@ -1,34 +1,63 @@
 .convert-container {
     text-align: center;
     margin-top: 50px;
-  }
-  
-  textarea {
-    width: 70%;
-    padding: 10px;
+    background-color: #f8f9fa;  /* Light background for contrast */
+    padding: 20px;  /* Added padding for better spacing */
+    border-radius: 10px;  /* Rounded corners for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+h1 {
+    font-size: 2.5em;  /* Stylish heading */
+    color: #343a40;  /* Darker color for better readability */
+    margin-bottom: 20px;
+    font-weight: bold;  /* Bold font for emphasis */
+}
+
+textarea {
+    width: 80%;  /* Increased width for better usability */
+    padding: 15px;  /* Increased padding for a better look */
     margin-bottom: 20px;
     font-size: 16px;
-  }
-  
-  button {
-    padding: 10px 20px;
+    border: 2px solid #007bff;  /* Stylish border */
+    border-radius: 5px;  /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    transition: border-color 0.3s;  /* Smooth transition */
+    resize: none;  /* Disable resizing */
+}
+
+textarea:focus {
+    border-color: #0056b3;  /* Change border color on focus */
+    outline: none;  /* Remove default outline */
+}
+
+button {
+    padding: 12px 25px;  /* Adjusted padding */
     font-size: 18px;
-    background-color: #007bff;
+    background-color: #007bff;  /* Primary color */
     color: white;
     border: none;
+    border-radius: 5px;  /* Rounded corners */
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .result-container {
+    transition: background-color 0.3s, transform 0.2s;  /* Smooth transitions */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+button:hover {
+    background-color: #0056b3;  /* Darker shade on hover */
+    transform: scale(1.05);  /* Slightly enlarge on hover */
+}
+
+.result-container {
     margin-top: 30px;
-  }
-  
-  .result-container p {
+    background-color: #ffffff;  /* White background for results */
+    padding: 15px;  /* Padding for results container */
+    border-radius: 5px;  /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+.result-container p {
     font-size: 20px;
-    color: #333;
-  }
-  
+    color: #343a40;  /* Darker color for better readability */
+    margin: 10px 0;  /* Margin for spacing */
+}
