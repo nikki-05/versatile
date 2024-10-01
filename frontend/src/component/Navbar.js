@@ -16,7 +16,7 @@ function Navbar() {
           <Link to="/learn" className="navbar-item">Learn</Link>
           <Link to="/board" className="navbar-item">WhiteBoard</Link>
         </div>
-        {/* <button className="navbar-button">Sign Up</button> */}
+        {/* <Link to="/convert" className="navbar-item">convert</Link> */}
       </div>
     </nav>
   );

@@ -10,6 +10,7 @@ import Board from './component/Board';
 import Alphabet from './component/Alphabet';
 import Numbers from './component/Numbers';
 import CommonPhrases from './component/CommonPhrases';
+// import Convert from './component/Convert';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/alphabet" element={<Alphabet/>} />
             <Route path="/numbers" element={<Numbers/>} />
             <Route path="/commonphrases" element={<CommonPhrases/>} />
+            {/* <Route path="/convert" element={<Convert/>} /> */}
             
 
           </Routes>
