@@ -24,7 +24,7 @@ function Home() {
         <div className="hero-content">
           <h1>Empowering Deaf & Mute Education</h1>
           <p>Your gateway to learning with Indian Sign Language and Gujarati</p>
-          <button className="cta-button">Get Started</button>
+          {/* <button className="cta-button">Get Started</button> */}
         </div>
         <div className="hero-image">
           <img src={logo} alt="Learning App" id="img"/>

@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <p className="footer-quote">
-          "✌️Silence is not the absence of communication, it's the beginning of understanding✌️."
+          "Silence is not the absence of communication, it's the beginning of understandin."
         </p>
       </div>
     </footer>
