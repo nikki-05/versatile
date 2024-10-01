@@ -22,9 +22,11 @@ function Learn() {
           </Link>
         </div>
         <div className="lesson-card">
+        <Link to="/commonphrases" className="lesson-link">
           <h2>Common Phrases</h2>
           <p>Learn everyday expressions</p>
           <button>Start Lesson</button>
+          </Link>
         </div>
         {/* Add more lesson cards as needed */}
       </div>

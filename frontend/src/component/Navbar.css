@@ -23,7 +23,7 @@
 }
 
 .navbar-logo img {
-  height: 80px; /* Adjusted height for better fit */
+  height: 150px; /* Adjusted height for better fit */
   width: auto; /* Maintain aspect ratio */
   margin-right: 1rem; /* Space between logo and text */
 }

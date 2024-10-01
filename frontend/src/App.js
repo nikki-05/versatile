@@ -9,6 +9,7 @@ import './App.css';
 import Board from './component/Board';
 import Alphabet from './component/Alphabet';
 import Numbers from './component/Numbers';
+import CommonPhrases from './component/CommonPhrases';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/board" element={<Board/>} />
             <Route path="/alphabet" element={<Alphabet/>} />
             <Route path="/numbers" element={<Numbers/>} />
+            <Route path="/commonphrases" element={<CommonPhrases/>} />
             
 
           </Routes>
