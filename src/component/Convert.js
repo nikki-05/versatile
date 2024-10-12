@@ -3,7 +3,7 @@ import './convert.css';
 
 const Convert = () => {
   const [englishText, setEnglishText] = useState('');
-  const [gujaratiText, setGujaratiText] = useState('');
+  const [HindiText, setHindiText] = useState('');
 
   // Function to handle translation
   
@@ -23,16 +23,16 @@ const Convert = () => {
       }
 
       const data = await response.json();
-      setGujaratiText(data.translated_text); // Update state with translated text
+      setHindiText(data.translated_text); // Update state with translated text
     } catch (error) {
       console.error("Error occurred during translation:", error);
-      setGujaratiText(''); // Clear output on error
+      setHindiText(''); // Clear output on error
     }
   };
 
   return (
     <div className="convert-container">
-      <h1>English to Gujarati Text Converter</h1>
+      <h1>English to HindiText Converter</h1>
       <form onSubmit={handleTranslate}>
         <textarea
           value={englishText}
@@ -44,9 +44,9 @@ const Convert = () => {
         <button type="submit">Translate</button>
       </form>
       <div className="result-container">
-        <h2>Translated Gujarati Text:</h2>
+        <h2>Translated Hindi Text:</h2>
         <div className="output-box"> {/* Output box for dynamic text */}
-          <p>{gujaratiText || "Translation will appear here..."}</p> {/* Default message */}
+          <p>{HindiText || "Translation will appear here..."}</p> {/* Default message */}
         </div>
       </div>
     </div>

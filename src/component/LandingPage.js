@@ -16,7 +16,7 @@ function LandingPage() {
         </div>
         <div className="feature">
           <h2>Real-time Translation</h2>
-          <p>Convert sign language to English or Gujarati instantly</p>
+          <p>Convert sign language to English or Hindi instantly</p>
         </div>
         <div className="feature">
           <h2>Practice Mode</h2>

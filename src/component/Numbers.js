@@ -13,27 +13,27 @@ import nine from '../images/nine.jpeg';
 
 const Numbers = () => {
     const numbers = [
-        { number: '0', handSign: zero, gujarati: '૦' },
-        { number: '1', handSign: one, gujarati: '૧' },
-        { number: '2', handSign: two, gujarati: '૨' },
-        { number: '3', handSign: three, gujarati: '૩' },
-        { number: '4', handSign: four, gujarati: '૪' },
-        { number: '5', handSign: five, gujarati: '૫' },
-        { number: '6', handSign: six, gujarati: '૬' },
-        { number: '7', handSign: seven, gujarati: '૭' },
-        { number: '8', handSign: eight, gujarati: '૮' },
-        { number: '9', handSign: nine, gujarati: '૯' },
-      ];
+        { number: '0', handSign: zero, hindi: '०' },
+        { number: '1', handSign: one, hindi: '१' },
+        { number: '2', handSign: two, hindi: '२' },
+        { number: '3', handSign: three, hindi: '३' },
+        { number: '4', handSign: four, hindi: '४' },
+        { number: '5', handSign: five, hindi: '५' },
+        { number: '6', handSign: six, hindi: '६' },
+        { number: '7', handSign: seven, hindi: '७' },
+        { number: '8', handSign: eight, hindi: '८' },
+        { number: '9', handSign: nine, hindi: '९' },
+    ];
 
   return (
     <div className="numbers-container">
-      <h1>Numbers 0-9 with Hand Signs and Gujarati Numerals</h1>
+      <h1>Numbers 0-9 with Hand Signs and Hindi Numerals</h1>
       <table className="numbers-table">
         <thead>
           <tr>
             <th>Number</th>
             <th>Hand Sign</th>
-            <th>Gujarati Numeral</th>
+            <th>Hindi Numeral</th>
           </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@ const Numbers = () => {
               <td>
                 <img src={item.handSign} alt={`Sign for ${item.number}`} className="hand-sign" />
               </td>
-              <td>{item.gujarati}</td>
+              <td>{item.hindi}</td>
             </tr>
           ))}
         </tbody>

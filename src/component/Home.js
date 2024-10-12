@@ -23,7 +23,7 @@ function Home() {
       <div className="hero-section">
         <div className="hero-content">
           <h1>Empowering Deaf & Mute Education</h1>
-          <p>Your gateway to learning with Indian Sign Language and Gujarati</p>
+          <p>Your gateway to learning with Indian Sign Language </p>
           {/* <button className="cta-button">Get Started</button> */}
         </div>
         <div className="hero-image">
@@ -38,7 +38,7 @@ function Home() {
           <div className="feature">
             <img src={inter} alt="Learn Icon" id="inter" />
             <h3>Interactive Lessons</h3>
-            <p>Master sign language with easy-to-follow lessons in English and Gujarati.</p>
+            <p>Master sign language with easy-to-follow lessons in English and Hindi.</p>
           </div>
           <div className="feature">
             <img src={translation} alt="Translate Icon" id="translation"/>

@@ -29,43 +29,43 @@ import Z from '../images/Z.png';
 
 const Alphabet = () => {
   const alphabets = [
-    { english: 'A', handSign: A, gujarati: 'અ' },
-    { english: 'B', handSign: B, gujarati: 'બ' },
-    { english: 'C', handSign: C, gujarati: 'સ' },
-    { english: 'D', handSign: D, gujarati: 'ડ' },
-    { english: 'E', handSign: E, gujarati: 'ઇ' },
-    { english: 'F', handSign: F, gujarati: 'ફ' },
-    { english: 'G', handSign: G, gujarati: 'ગ' },
-    { english: 'H', handSign: H, gujarati: 'હ' },
-    { english: 'I', handSign: I, gujarati: 'ઈ' },
-    { english: 'J', handSign: J, gujarati: 'જ' },
-    { english: 'K', handSign: K, gujarati: 'ક' },
-    { english: 'L', handSign: L, gujarati: 'લ' },
-    { english: 'M', handSign: M, gujarati: 'મ' },
-    { english: 'N', handSign: N, gujarati: 'ન' },
-    { english: 'O', handSign: O, gujarati: 'ઓ' },
-    { english: 'P', handSign: P, gujarati: 'પ' },
-    { english: 'Q', handSign: Q, gujarati: 'ક્વ' },
-    { english: 'R', handSign: R, gujarati: 'ર' },
-    { english: 'S', handSign: S, gujarati: 'સ' },
-    { english: 'T', handSign: T, gujarati: 'ટ' },
-    { english: 'U', handSign: U, gujarati: 'ઉ' },
-    { english: 'V', handSign: V, gujarati: 'વ' },
-    { english: 'W', handSign: W, gujarati: 'વ' },
-    { english: 'X', handSign: X, gujarati: 'ક્ષ' },
-    { english: 'Y', handSign: Y, gujarati: 'ય' },
-    { english: 'Z', handSign: Z, gujarati: 'ઝ' }
+    { english: 'A', handSign: A, hindi: 'अ' },
+    { english: 'B', handSign: B, hindi: 'ब' },
+    { english: 'C', handSign: C, hindi: 'स' },
+    { english: 'D', handSign: D, hindi: 'ड' },
+    { english: 'E', handSign: E, hindi: 'इ' },
+    { english: 'F', handSign: F, hindi: 'फ' },
+    { english: 'G', handSign: G, hindi: 'ग' },
+    { english: 'H', handSign: H, hindi: 'ह' },
+    { english: 'I', handSign: I, hindi: 'ई' },
+    { english: 'J', handSign: J, hindi: 'ज' },
+    { english: 'K', handSign: K, hindi: 'क' },
+    { english: 'L', handSign: L, hindi: 'ल' },
+    { english: 'M', handSign: M, hindi: 'म' },
+    { english: 'N', handSign: N, hindi: 'न' },
+    { english: 'O', handSign: O, hindi: 'ओ' },
+    { english: 'P', handSign: P, hindi: 'प' },
+    { english: 'Q', handSign: Q, hindi: 'क्व' },
+    { english: 'R', handSign: R, hindi: 'र' },
+    { english: 'S', handSign: S, hindi: 'स' },
+    { english: 'T', handSign: T, hindi: 'ट' },
+    { english: 'U', handSign: U, hindi: 'उ' },
+    { english: 'V', handSign: V, hindi: 'व' },
+    { english: 'W', handSign: W, hindi: 'व' },
+    { english: 'X', handSign: X, hindi: 'क्ष' },
+    { english: 'Y', handSign: Y, hindi: 'य' },
+    { english: 'Z', handSign: Z, hindi: 'ज़' }
   ];
 
   return (
     <div className="alphabet-container">
-      <h1>English to Gujarati Alphabet with Hand Signs</h1>
+      <h1>English to Hindi Alphabet with Hand Signs</h1>
       <table className="alphabet-table">
         <thead>
           <tr>
             <th>English Alphabet</th>
             <th>Hand Sign</th>
-            <th>Gujarati Alphabet</th>
+            <th>Hindi Alphabet</th>
           </tr>
         </thead>
         <tbody>
@@ -75,7 +75,7 @@ const Alphabet = () => {
               <td>
                 <img src={item.handSign} alt={`Sign for ${item.english}`} className="hand-sign" />
               </td>
-              <td>{item.gujarati}</td>
+              <td>{item.hindi}</td>
             </tr>
           ))}
         </tbody>
