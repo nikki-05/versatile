@@ -7,7 +7,10 @@ function LandingPage() {
       <div className="hero-section">
         <h1>Learn Sign Language</h1>
         <p>Master sign language with our interactive lessons and real-time translation</p>
-        <button className="cta-button">Get Started</button>
+        <div className="button-group">
+          <button className="cta-button">Get Started</button>
+          <button className="dictionary-button">Dictionary</button>
+        </div>
       </div>
       <div className="features-section">
         <div className="feature">

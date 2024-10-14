@@ -1,0 +1,160 @@
+.dictionary {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.alphabet-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.letter-button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.letter-button:hover, .letter-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.dictionary-content {
+  display: flex;
+  gap: 30px;
+}
+
+.word-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.word-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.word-button:hover {
+  background-color: #f0f0f0;
+}
+
+.word-details {
+  flex: 2;
+}
+
+.video-container {
+  margin-bottom: 20px;
+}
+
+.video-placeholder {
+  background-color: #f0f0f0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #666;
+  border-radius: 4px;
+}
+
+.dictionary-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.results {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.phonetic {
+  font-style: italic;
+  color: #6c757d;
+}
+
+.meaning {
+  margin-bottom: 20px;
+}
+
+.example {
+  font-style: italic;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .dictionary-content {
+    flex-direction: column;
+  }
+  
+  .word-list {
+    max-height: 200px;
+  }
+}
