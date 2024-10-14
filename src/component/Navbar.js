@@ -15,9 +15,8 @@ function Navbar() {
           <Link to="/translate" className="navbar-item">Translate</Link>
           <Link to="/learn" className="navbar-item">Learn</Link>
           <Link to="/board" className="navbar-item">WhiteBoard</Link>
-          <Link to="/dictionary" className="navbar-item">Dictionary</Link>
-        </div>
-        <Link to="/convert" className="navbar-item">Convert</Link>
+        <Link to="/convert" className="navbar-item convert-item">Convert</Link>
+      </div>
       </div>
     </nav>
   );

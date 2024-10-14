@@ -7,7 +7,7 @@
   background-color: #040423;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 80px rgba(0, 0, 255, 0.2); /* Glow effect on edges */
+  box-shadow: inset 0 0 60px rgba(0, 0, 255, 0.2); /* Reduced glow for subtlety */
 }
 
 /* Glow effect on the entire page edges */
@@ -18,7 +18,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 255, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 0, 255, 0.15), transparent 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -33,7 +33,7 @@ body::before {
 }
 
 #img:hover {
-  transform: rotate(5deg) scale(1.05); /* Image tilting effect */
+  transform: rotate(2deg) scale(1.03); /* Subtle tilting effect */
 }
 
 #inter,
@@ -51,13 +51,13 @@ body::before {
 #inter:hover,
 #practice:hover,
 #translation:hover {
-  transform: rotate(-5deg) scale(1.1); /* Tilting effect on hover */
+  transform: rotate(-3deg) scale(1.05); /* Subtle tilting effect on hover */
 }
 
 .hero-content h1 {
   font-size: 48px;
   color: #ffffff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 255, 0.5); /* Text glow effect */
+  text-shadow: 1px 1px 8px rgba(0, 0, 255, 0.4); /* Softer text glow */
 }
 
 .hero-content p {
@@ -80,24 +80,24 @@ body::before {
 
 .cta-button:hover {
   background-color: #0056b3;
-  transform: scale(1.1); /* Button scaling on hover */
+  transform: scale(1.05); /* More subtle button scaling */
 }
 
 .hero-image {
   flex: 1;
-  transform: perspective(800px) rotateY(-10deg); /* Tilted effect */
+  transform: perspective(1000px) rotateY(-5deg); /* Subtler 3D tilt */
   transition: transform 0.5s ease;
 }
 
 .hero-image:hover {
-  transform: perspective(800px) rotateY(0deg) scale(1.05); /* Smooth tilt on hover */
+  transform: perspective(1000px) rotateY(0deg) scale(1.03); /* Smooth, minor tilt on hover */
 }
 
 .hero-image img {
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Image shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
 }
 
 /* Features Section */
@@ -111,7 +111,7 @@ body::before {
   text-align: center;
   margin-bottom: 40px;
   color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 255, 0.5); /* Title glow */
+  text-shadow: 1px 1px 6px rgba(0, 0, 255, 0.3); /* Subtle title glow */
 }
 
 .features-grid {
@@ -128,8 +128,9 @@ body::before {
 }
 
 .feature:hover {
-  transform: rotate(3deg) scale(1.05); /* Tilting effect on hover */
+  transform: rotate(1deg) scale(1.03); /* Subtle tilting on hover */
 }
+
 #inter, #practice, #translation {
   width: 300px;
   height: 300px;
@@ -143,7 +144,7 @@ body::before {
 }
 
 .feature img:hover {
-  transform: scale(1.2); /* Image scaling on hover */
+  transform: scale(1.1); /* Slight scaling on hover */
 }
 
 .feature h3 {
@@ -167,7 +168,7 @@ body::before {
 }
 
 .testimonial:hover {
-  transform: scale(1.05); /* Testimonial scaling on hover */
+  transform: scale(1.03); /* Subtle scaling effect on hover */
 }
 
 .testimonial p {
@@ -203,5 +204,5 @@ body::before {
 .cta-button-large:hover {
   background-color: #0056b3;
   color: white;
-  transform: scale(1.1); /* Button scaling on hover */
+  transform: scale(1.05); /* More subtle scaling */
 }

@@ -11,7 +11,6 @@ import Alphabet from './component/Alphabet';
 import Numbers from './component/Numbers';
 import CommonPhrases from './component/CommonPhrases';
 import Convert from './component/Convert';
-import Dictionary from './component/Dictionary';
 
 function App() {
   return (
@@ -28,7 +27,7 @@ function App() {
             <Route path="/numbers" element={<Numbers/>} />
             <Route path="/commonphrases" element={<CommonPhrases/>} />
             <Route path="/convert" element={<Convert/>} />
-            <Route path="/dictionary" element={<Dictionary/>} />
+          
 
           </Routes>
         </div>

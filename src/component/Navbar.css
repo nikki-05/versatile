@@ -6,8 +6,8 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center; /* Center items vertically */
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -17,7 +17,7 @@
   display: flex; /* Use flexbox for alignment */
   align-items: center; /* Center items vertically */
   font-size: 1.8rem; /* Increased logo size */
-  font-weight: bold; 
+  font-weight: bold;
   color: #ecf0f1; /* Light color for contrast */
   text-decoration: none;
 }
@@ -30,20 +30,46 @@
 
 .navbar-menu {
   display: flex;
-  gap: 2rem; /* Increased spacing for better proportion */
+  justify-content: space-evenly; /* Distribute items evenly across the available space */
+  flex-grow: 1; /* Allow the menu to grow and take available space */
+  align-items: center; /* Center items vertically */
 }
 
 .navbar-item {
   color: #ecf0f1; /* Light color for items */
   text-decoration: none;
-  padding: 0.5rem 1rem; 
-  border-radius: 4px; 
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   transition: color 0.3s, background-color 0.3s; /* Smooth transitions */
 }
 
 .navbar-item:hover {
   color: #ffffff; /* White text on hover */
   background-color: rgba(255, 255, 255, 0.1); /* Subtle background effect on hover */
+}
+
+.convert-item {
+  color: #ecf0f1; /* Ensure Convert item has the same color */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+/* Ensure Convert item is part of the menu */
+.navbar-menu .convert-item {
+  margin-left: auto; /* Push the Convert item to the right */
+}
+
+.convert-item:hover {
+  color: #ffffff; /* White text on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background effect on hover */
+}
+
+/* Optional: Add a class to ensure all items have the same alignment */
+.navbar-item, .convert-item {
+  display: flex; /* Ensure all items are flex items */
+  align-items: center; /* Center items vertically */
 }
 
 .navbar-button {
