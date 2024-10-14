@@ -10,19 +10,16 @@ import thankYou from '../images/thankyousign.jpg';
 import yes from '../images/yes.png';
 
 function Translate() {
-  const [showModal, setShowModal] = useState(false);
-  const [isRunning, setIsRunning] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [loadingStatus, setLoadingStatus] = useState('');
-  const [finalResult, setFinalResult] = useState('');
   const [translatedText, setTranslatedText] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [isModelReady, setIsModelReady] = useState(false);
+  const [prediction, setPrediction] = useState('');
+  const [finalResult, setFinalResult] = useState('');
+  const [isRunning, setIsRunning] = useState(false);
 
   const webcamRef = useRef(null);
   const modelRef = useRef(null);
-  const webcamInstanceRef = useRef(null);
-  const labelContainerRef = useRef(null);
-  const predictionOutputRef = useRef(null);
-  const finalResultRef = useRef(null);
+  const isRunningRef = useRef(false);
 
   const signLibrary = [
     { image: hello, name: 'Hello' },
@@ -35,17 +32,14 @@ function Translate() {
 
   useEffect(() => {
     if (showModal) {
+      const loadScripts = async () => {
+        await loadScript("https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js");
+        await loadScript("https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js");
+        setIsModelReady(true);
+      };
       loadScripts();
     }
   }, [showModal]);
-
-  const loadScripts = async () => {
-    setLoadingStatus('Loading TensorFlow.js...');
-    await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js');
-    setLoadingStatus('Loading Teachable Machine...');
-    await loadScript('https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js');
-    setLoadingStatus('Scripts loaded. Ready to start.');
-  };
 
   const loadScript = (src) => {
     return new Promise((resolve, reject) => {
@@ -57,105 +51,65 @@ function Translate() {
     });
   };
 
-  const URL = "https://teachablemachine.withgoogle.com/models/Elr-I70JN/";
-  let maxPredictions;
-  let animationFrameId = null;
-
-  async function init() {
-    setIsLoading(true);
-    setLoadingStatus('Loading model...');
+  const init = async () => {
+    const URL = "https://teachablemachine.withgoogle.com/models/-zDf2FdEU/";
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
     try {
       modelRef.current = await window.tmImage.load(modelURL, metadataURL);
-      maxPredictions = modelRef.current.getTotalClasses();
-
-      setLoadingStatus('Setting up webcam...');
-      const flip = true;
-      webcamInstanceRef.current = new window.tmImage.Webcam(300, 300, flip); // Increased size for visibility
-
-      await webcamInstanceRef.current.setup();
-      setLoadingStatus('Starting webcam...');
-      await webcamInstanceRef.current.play();
+      webcamRef.current = new window.tmImage.Webcam(200, 200, true);
+      await webcamRef.current.setup();
+      await webcamRef.current.play();
+      document.getElementById("webcam-container").innerHTML = '';
+      document.getElementById("webcam-container").appendChild(webcamRef.current.canvas);
       
-      if (webcamRef.current) {
-        webcamRef.current.innerHTML = '';
-        webcamRef.current.appendChild(webcamInstanceRef.current.canvas);
-      } else {
-        throw new Error('Webcam container not found');
-      }
-
-      if (labelContainerRef.current) {
-        labelContainerRef.current.innerHTML = '';
-        for (let i = 0; i < maxPredictions; i++) {
-          labelContainerRef.current.appendChild(document.createElement("div"));
-        }
-      } else {
-        throw new Error('Label container not found');
-      }
-
+      isRunningRef.current = true;
       setIsRunning(true);
-      setIsLoading(false);
-      setLoadingStatus('Camera started. Ready to predict.');
       loop();
     } catch (error) {
       console.error("Error initializing model or webcam:", error);
-      setIsLoading(false);
-      setLoadingStatus('Error: ' + error.message);
     }
-  }
+  };
 
-  async function loop() {
-    if (isRunning) {
-      webcamInstanceRef.current.update();
+  const loop = async () => {
+    if (isRunningRef.current) {
+      webcamRef.current.update();
       await predict();
-      animationFrameId = window.requestAnimationFrame(loop);
+      requestAnimationFrame(loop);
     }
-  }
+  };
 
-  async function predict() {
-    if (!modelRef.current || !webcamInstanceRef.current) {
-      console.error("Model or webcam not initialized");
-      setLoadingStatus('Error: Model or webcam not initialized');
-      return;
-    }
-
-    try {
-      const prediction = await modelRef.current.predict(webcamInstanceRef.current.canvas);
+  const predict = async () => {
+    if (modelRef.current && webcamRef.current) {
+      const prediction = await modelRef.current.predict(webcamRef.current.canvas);
       const maxProbability = Math.max(...prediction.map(p => p.probability));
       const predictedClass = prediction.find(p => p.probability === maxProbability);
-      
-      if (predictionOutputRef.current) {
-        predictionOutputRef.current.innerHTML = `Predicted class: ${predictedClass.className} (Probability: ${predictedClass.probability.toFixed(2)})`;
-      }
-      
+      setPrediction(`Predicted class: ${predictedClass.className} (Probability: ${predictedClass.probability.toFixed(2)})`);
       setFinalResult(predictedClass.className);
-    } catch (error) {
-      console.error("Prediction error:", error);
-      setLoadingStatus('Error during prediction: ' + error.message);
     }
-  }
+  };
 
-  function displayFinalResult() {
-    finalResultRef.current.innerHTML = `Final Result: ${finalResult}`;
-    setTranslatedText(`Translated: ${finalResult}`);
-  }
-
-  function stop() {
+  const stop = () => {
+    isRunningRef.current = false;
     setIsRunning(false);
-    if (animationFrameId) {
-      window.cancelAnimationFrame(animationFrameId);
+    if (webcamRef.current) {
+      webcamRef.current.stop();
     }
-    if (webcamInstanceRef.current) {
-      webcamInstanceRef.current.stop();
-    }
-  }
+  };
 
-  function restart() {
+  const restart = () => {
     stop();
+    setPrediction('');
+    setFinalResult('');
     init();
-  }
+  };
+
+  const handlePredict = () => {
+    setTranslatedText(finalResult);
+    // Optionally, you can also update the text outside the modal
+    // document.querySelector('.text-output-area p').textContent = finalResult;
+  };
 
   return (
     <div className="translate">
@@ -190,16 +144,18 @@ function Translate() {
         <div className="modal">
           <div className="modal-content">
             <h2>Capture Sign</h2>
-            <button type="button" onClick={init} disabled={isRunning || isLoading}>Start</button>
-            <button type="button" id="predict-button" onClick={displayFinalResult}>Predict</button>
-            <button type="button" id="stop-button" onClick={stop}>Stop</button>
-            <button type="button" onClick={restart}>Restart</button>
-            {isLoading && <p>{loadingStatus || 'Please wait, camera is starting...'}</p>}
-            <div id="webcam-container" ref={webcamRef} style={{width: '300px', height: '300px', border: '1px solid black', margin: '10px 0'}}></div>
-            <div id="label-container" ref={labelContainerRef}></div>
-            <div id="prediction-output" ref={predictionOutputRef}></div>
-            <div id="final-result" ref={finalResultRef}></div>
-            <button onClick={() => setShowModal(false)}>Close</button>
+            <div>Model</div>
+            <button type="button" onClick={init} disabled={!isModelReady || isRunning}>Start</button>
+            <button type="button" onClick={handlePredict} disabled={!isRunning}>Predict</button>
+            <button type="button" onClick={stop} disabled={!isRunning}>Stop</button>
+            <button type="button" onClick={restart} disabled={!isModelReady}>Restart</button>
+            <div id="webcam-container"></div>
+            <div>{prediction}</div>
+            <div>Final Result: {finalResult}</div>
+            <button onClick={() => {
+              stop();
+              setShowModal(false);
+            }}>Close</button>
           </div>
         </div>
       )}
@@ -207,4 +163,4 @@ function Translate() {
   );
 }
 
-export default Translate;
+export default Translate;

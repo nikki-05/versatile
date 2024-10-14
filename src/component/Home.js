@@ -23,7 +23,7 @@ function Home() {
       <div className="hero-section">
         <div className="hero-content">
           <h1>Empowering Deaf & Mute Education</h1>
-          <p>Your gateway to learning with Indian Sign Language </p>
+          
           {/* <button className="cta-button">Get Started</button> */}
         </div>
         <div className="hero-image">

@@ -1,13 +1,14 @@
 .learn {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #040423;
 }
 
 .learn h1 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333; /* Improved color for better readability */
+  color: #ffffff; /* Improved color for better readability */
 }
 
 .lesson-grid {
@@ -17,7 +18,7 @@
 }
 
 .lesson-card {
-  background-color: #f5f5f5;
+  background-color: #040423;
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
@@ -31,16 +32,16 @@
 .lesson-card h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #4a90e2; /* Changed color for headings */
+  color: #ffffff; /* Changed color for headings */
 }
 
 .lesson-card p {
-  color: #666;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .lesson-card button {
-  background-color: #4a90e2;
+  background-color: #040423;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -50,5 +51,5 @@
 }
 
 .lesson-card button:hover {
-  background-color: #3a7bc8; /* Darker shade on hover */
+  background-color: #040423; /* Darker shade on hover */
 }
